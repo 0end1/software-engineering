@@ -158,4 +158,15 @@ description: 软件工程全流程开发技能，覆盖软件生命周期（可�
 
 ### scripts/
 
-- （可选）后续可添加自动化脚本，如生成项目骨架、测试脚手架等
+自动化脚本，可被 CodeBuddy 直接执行：
+
+- `scripts/scaffold_project.py` — **项目脚手架生成器**。根据选定的开发模式，生成标准化的项目目录骨架（docs/src/tests 及各模式专属目录）与初始工程文档（README、SRS、设计、测试计划）。
+  ```bash
+  python3 scripts/scaffold_project.py --name <项目名> [--model waterfall|prototype|incremental|spiral|agile] [--path <目录>] [--no-docs]
+  ```
+- `scripts/gen_doc.py` — **规范文档生成器**。为项目生成标准的软件工程文档：需求规格说明书（SRS）、设计说明书、测试计划、测试报告、可行性研究报告。
+  ```bash
+  python3 scripts/gen_doc.py --name <项目名> [--type srs|design|test-plan|test-report|feasibility|all] [--out ./docs] [--model <模式>]
+  ```
+
+**使用建议**：新项目启动时，先运行 `scaffold_project.py` 生成符合所选开发模式的工程骨架；在需求分析、设计、测试阶段需要文档时，运行 `gen_doc.py` 生成对应文档模板后按项目情况补全。
