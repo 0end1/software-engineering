@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# 归档文件
+*.zip
+*.tar.gz
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# 技能打包产物
+dist/
